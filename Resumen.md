@@ -27,6 +27,54 @@ En java, honrar este requerimiento significa que el codigo que pueda 'tirar' una
 
 
 
+
+
+
+
+## Jerarquía de errores en Java
+
+Cuando trabajamos en Java, todo lo que conceptualicemos a manera de código se transforma en un objeto.  Así mismo todo error toma la forma de un objeto y estos a su vez se acomodan en diferentes tipos de clases que se jerarquizan.  Utilidad que nos ayuda a su comprensión y manejo dentro de la programación en Java.
+
+Preliminarmente, existen dos tipos de clases de error.  Estos se diferencian por los tiempos dentro de los cuales se cometen dentro del proceso. Tenemos entonces:
+
+- Errores en tiempo de compilación: son los de origen de sintaxis, las faltas que realizamos a la hora de escribir el código.
+- Errores en tiempo de ejecución: se presentan a la hora de correr el programa.
+
+Estos errores presentes en la ejecución corresponden a la clase Throwable. Esta es la clase base que representa todo lo que es posible “lanzar” en Java. Puede presentar además ciertas características distintivas:
+
+Crea una instantánea del estado de la pila en el momento en el que se creó el objeto ( llamada “stack trace” o “call chain”).
+Guarda un mensaje (variable de instancia tipo String) que podemos utilizar para rastrear el tipo de error.
+Adicionalmente puede tener una causa, bajo el tipo Throwable, que permite visualizar el error que causo el error detectado.
+
+La clase Throwable detecta dos tipos de posibles errores, que se delimitan en las siguientes subclases:
+
+- Subclase Error: Son problemas graves que tienen que ver con acciones externas a la aplicación, como lo es el hardware. Un error de este tipo muy común sería que el equipo no cuente con suficiente memoria en el disco duro del computador para correr el programa.
+
+- Subclase Exception: Estas son las situaciones que ocurren dentro de la aplicación. Dentro del lenguaje Java es posible distinguir ciertos errores que obstruyen su buen funcionamiento. Tienen dos posibles orígenes y ambos tipos de excepciones corresponden a instancias que pueden ser controladas por el equipo de trabajo y una en específico por el programador.
+IOException: conocidas como excepciones verificadas o “checked”.  Son excepciones que se salen del control del programa, como por ejemplo condiciones de entrada y salida. En general no corresponde a una responsabilidad del programador sino a fallas en el flujo de información como por ejemplo eliminar una imagen que utiliza la aplicación o mover alguna carpeta del lugar inicial.
+
+- RuntimeException: conocidas como excepciones no verificadas o “unchecked”.  Son excepciones que generalmente reflejan errores en la lógica del programa, y se presentan por falta de cuidado por parte del programador al llevar al lenguaje a situaciones poco racionales o imposibles de realizar. Como por ejemplo dividir un número por cero o intentar acceder a un índice fuera de los límites de un arreglo.
+
+### Subclases de RuntimeException
+
+El paquete llamado java.lang define las jerarquía de estándar de la clase RuntimeException, entre las subclases tenemos:
+- ArithmeticException: Excepción de condición aritmética, como dividir un número entre cero.
+- ArrayIndexOutOfBoundsException: Ocurre cuando se declara el índice de un arreglo menor a cero o mayor o igual al tamaño del arreglo.
+- ArrayStoreException: Al intentar guardar un elemento en un arreglo con un tipo incompatible del arreglo.
+- ClassCastException: Cuando ocurre un “casting” de un objeto a un tipo inapropiado.
+- IllegalArgumentException: Indica que un argumento ilegal ha pasado a un método.
+- IllegalMonitorStateException: Cuando un los métodos wait(), notify(), o notifyAll() de un objeto son convocados sin que el objeto los contenga.
+- IllegalStateException: Indica que un método ha sido invocado en un estado inapropiado en ejecución para la operación que lo solicita.
+- IllegalThreadStateException: Indica el intento de crear una operación de un hilo que no es el permitido para el estado de dicho hilo.
+- IndexOutOfBoundsException: Contiene las subclases ArrayIndexOutOfBoundsException o StringIndexOutOfBoundsException.
+- NegativeArraySizeException: Al crear un arreglo con tamaño negativo.
+- NoSuchElementException: 
+- NullPointerException: Cuando hay un intento de acceder a un objeto por medio de una referencia nula. Por ejemplo, cuando se intenta instanciar una variable o llamar a un método por medio de un objeto nulo.
+- NumberFormatException. Indica el intento fallido de parsear información numérica en un String
+- SecurityException: Respuesta al intento de violar la seguridad implementada por el objeto SecurityManager.
+- StringIndexOutOfBoundsException: Cuando se accede al índice de un String menor a cero o igual o mayor a su tamaño.
+
+
 ## Uso de excepciones.
 
 >Cuando son bien utilizadas pueden mejorar la legibilidad, confiabilidad y mantenibilidad de un programa; cuando no, tienen el efecto opuesto.
