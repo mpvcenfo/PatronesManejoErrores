@@ -14,7 +14,7 @@ En caso de no encontrar uno, el sistema en tiempo de ejecucion, y por lo tanto e
   Normalmente indican errores de programacion, bugs, errores de logica o  poca experiencia con la API.
 
 
-### El requerimiento "Atrapar o Especificar" (Catch or Specify Requirement) 
+### El requerimiento "Atrapar o Especificar" (Catch or Specify Requirement) 
 
 En java, honrar este requerimiento significa que el codigo que pueda 'tirar' una excepcion debe estar rodeado por lo siguinte:
 - Una declaracion "try", que atrape la excepcion.
@@ -59,5 +59,5 @@ En el caso de las excepciones no marcadas (Unchecked Exceptions) se trata de exc
 
 
 #### Referencias
-- (https://docs.oracle.com/javase/tutorial/essential/exceptions/definition.html)
+- https://docs.oracle.com/javase/tutorial/essential/exceptions/definition.html
 - Joshua Bloch, Effective Java Second Edition.
