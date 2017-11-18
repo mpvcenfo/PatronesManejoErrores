@@ -32,11 +32,11 @@ En java, honrar este requerimiento significa que el codigo que pueda 'tirar' una
 >Cuando son bien utilizadas pueden mejorar la legibilidad, confiabilidad y mantenibilidad de un programa; cuando no, tienen el efecto opuesto.
 
 ### Usar Excepciones unicamente para condiciones excepcionales.
-Como su nombre implica, las excepciones son usadas únicamente para casos de excepcionales condiciones, nunca deberían ser usadas para el flujo ordinario de control.
+- Como su nombre implica, las excepciones son usadas únicamente para casos de excepcionales condiciones, nunca deberían ser usadas para el flujo ordinario de control.
 
 ### Usar Excepciones Marcadas para condiciones recuperables y Excepciones de tiempo de ejecución para errores de programación.
-Las excepciones marcadas (Checked Exceptions) deben ser manejadas en el catch o propagadas al exterior para ser para ser manipuladas, no es recomendable ignorarlas. Estas excepciones tienen la intención de recuperar en un estado válido en el flujo de control. Debido a que la naturaleza de estas excepciones indica condiciones recuperables, es importante proveer métodos que proporcionen información que puedan ayudar al cliente para regresar dicho estado válido. 	
-En el caso de las excepciones no marcadas (Unchecked Exceptions) se trata de excepciones en tiempo de ejecución o errores, estas posiblemente precedan a un comportamiento en el cual sea irrecuperable el estado o flujo de control, por lo que el comportamiento normal sería detener el hilo actual y mostrar un mensaje apropiado de error. La gran mayoría de estos errores tienen que ver con violaciones a las precondiciones (fallas en lo establecido según la especificación de lo que la interfaz(API) espera del cliente) del codigo ejecutando.
+- Las excepciones marcadas (Checked Exceptions) deben ser manejadas en el catch o propagadas al exterior para ser para ser manipuladas, no es recomendable ignorarlas. Estas excepciones tienen la intención de recuperar en un estado válido en el flujo de control. Debido a que la naturaleza de estas excepciones indica condiciones recuperables, es importante proveer métodos que proporcionen información que puedan ayudar al cliente para regresar dicho estado válido. 	
+- En el caso de las excepciones no marcadas (Unchecked Exceptions) se trata de excepciones en tiempo de ejecución o errores, estas posiblemente precedan a un comportamiento en el cual sea irrecuperable el estado o flujo de control, por lo que el comportamiento normal sería detener el hilo actual y mostrar un mensaje apropiado de error. La gran mayoría de estos errores tienen que ver con violaciones a las precondiciones (fallas en lo establecido según la especificación de lo que la interfaz(API) espera del cliente) del codigo ejecutando.
 
 > La situación no siempre es blanco o negro.
        
