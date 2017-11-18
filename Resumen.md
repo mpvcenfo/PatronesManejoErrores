@@ -28,8 +28,9 @@ En java, honrar este requerimiento significa que el codigo que pueda 'tirar' una
 
 
 
+![Jerarquía de excepciones de Java](jerarquia-excepciones-java.jpg)
 
-
+![Jerarquía de RuntimeException](jerarquia-runtimeexception.jpg)
 
 ## Jerarquía de errores en Java
 
